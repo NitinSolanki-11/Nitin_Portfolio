@@ -3,13 +3,12 @@
 ## 🚀 Quick Start
 
 ```bash
-# 1. Extract the zip, open terminal in the folder
 # 2. Install dependencies
 npm install
 
 # 3. Start dev server
 npm run dev
-# → Opens at http://localhost:5173
+
 
 # 4. Build for production
 npm run build
