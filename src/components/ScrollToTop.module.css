@@ -1,0 +1,49 @@
+/* ============================================================
+   SCROLL TO TOP BUTTON
+   ============================================================ */
+.btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 300;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+
+  background: var(--primary);
+  color: var(--btn-text);
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: var(--glow);
+  cursor: pointer;
+
+  /* Hidden by default — slides in when .show is added */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.35s, transform 0.35s, box-shadow 0.3s;
+}
+
+/* Visible state */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.btn:hover {
+  box-shadow: var(--glow-strong);
+  transform: translateY(-3px);
+}
+
+/* Mobile — slightly smaller */
+@media (max-width: 480px) {
+  .btn { bottom: 1.2rem; right: 1.2rem; width: 40px; height: 40px; font-size: 0.9rem; }
+}

@@ -1,0 +1,173 @@
+/* ============================================================
+   INTERNSHIP SECTION
+   ============================================================ */
+.section { background: var(--bg3); position: relative; z-index: 1; }
+
+/* ---- Timeline layout ---- */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.itemWrapper {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Dot and vertical line */
+.dotWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.8rem;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: var(--glow);
+  border: 3px solid var(--bg);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.line {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+  margin-top: 8px;
+  border-radius: 2px;
+  min-height: 40px;
+}
+
+/* ---- Card ---- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.8rem;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  backdrop-filter: blur(8px);
+}
+
+.card:hover {
+  transform: translateX(5px);
+  box-shadow: var(--glow);
+  border-color: var(--primary);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.role {
+  font-family: 'Orbitron', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.company {
+  color: var(--secondary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+[data-theme="light"] .company { color: var(--accent); }
+
+.badge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  padding: 5px 14px;
+  border-radius: 50px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--primary);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--card-border);
+  margin-bottom: 1.1rem;
+}
+
+/* Points list */
+.points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.points li {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.65;
+  padding-left: 1.3rem;
+  position: relative;
+}
+
+.points li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.points li :global(strong) { color: var(--text); }
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
+}
+
+.tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.63rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  color: var(--primary);
+  background: var(--card-bg);
+  transition: all 0.3s;
+}
+
+.tag:hover {
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+  .itemWrapper { grid-template-columns: 32px 1fr; gap: 1rem; }
+  .card { padding: 1.2rem; }
+  .cardTop { flex-direction: column; }
+}

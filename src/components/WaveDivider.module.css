@@ -1,0 +1,16 @@
+/* ============================================================
+   WAVE DIVIDER
+   ============================================================ */
+.wrap {
+  position: relative;
+  z-index: 2;
+  line-height: 0;
+  overflow: hidden;
+  /* Slight negative margin to remove any gap between sections */
+  margin-bottom: -2px;
+}
+
+.wrap svg {
+  display: block;
+  width: 100%;
+}
